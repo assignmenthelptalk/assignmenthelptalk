@@ -1,0 +1,90 @@
+---
+const services = [
+  { label: 'Economics Paper Writing', href: '/economics-paper-writing-services/' },
+  { label: 'Biology Paper Writing', href: '/biology-paper-writing-service/' },
+  { label: 'Nursing Paper Writing', href: '/nursing-paper-writing-services/' },
+  { label: 'Nursing Care Plan', href: '/nursing-care-plan-writing-services/' },
+  { label: 'CIPD Assignment Help', href: '/cipd-assignment-help/' },
+  { label: 'HR Assignment Help', href: '/hr-assignment-help/' },
+  { label: 'SOP Writing Services', href: '/sop-writing-services/' },
+  { label: 'Lab Report Writing', href: '/lab-report-writing-services/' },
+  { label: 'CIPS Assignment Help', href: '/cips-assignment-help/' },
+  { label: 'GIS Assignment Help', href: '/gis-assignment-help/' },
+  { label: 'Finance Assignment Help', href: '/finance-assignment-help/' },
+  { label: 'ILM Assignment Help', href: '/ilm-assignment-help/' },
+];
+
+const capstones = [
+  { label: 'DNP Capstone Project Help', href: '/dnp-capstone-project-help/' },
+  { label: 'Capstone Project Help', href: '/capstone-project-help/' },
+  { label: 'IT Capstone Project Ideas', href: '/information-technology-capstone-project-ideas/' },
+  { label: 'Nursing Capstone Project Ideas', href: '/nursing-capstone-project-ideas/' },
+  { label: 'Business Capstone Project', href: '/business-capstone-project/' },
+  { label: 'Nursing Capstone', href: '/nursing-capstone/' },
+  { label: 'DNP Editing Services', href: '/dnp-editing-services/' },
+];
+---
+<footer class="bg-dark text-gray-300 mt-16">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Brand -->
+      <div>
+        <h3 class="text-white font-bold text-lg mb-3">Assignment Help Talk</h3>
+        <p class="text-sm text-gray-400 mb-4">
+          Professional academic writing services trusted by 100,000+ students worldwide.
+        </p>
+        <p class="text-sm text-gray-400">
+          <a href="mailto:support@assignmenthelptalk.com" class="hover:text-white transition-colors">
+            support@assignmenthelptalk.com
+          </a>
+        </p>
+        <p class="text-sm text-gray-400">+(44) 731-183-9056</p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-white font-semibold mb-3">Writing Services</h4>
+        <ul class="space-y-1">
+          {services.map(({ label, href }) => (
+            <li>
+              <a href={href} class="text-sm text-gray-400 hover:text-white transition-colors">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Capstone -->
+      <div>
+        <h4 class="text-white font-semibold mb-3">Capstone Services</h4>
+        <ul class="space-y-1">
+          {capstones.map(({ label, href }) => (
+            <li>
+              <a href={href} class="text-sm text-gray-400 hover:text-white transition-colors">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+        <ul class="space-y-1">
+          <li><a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a></li>
+          <li><a href="/about-us/" class="text-sm text-gray-400 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="/contact/" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          <li><a href="/order-now/" class="text-sm text-gray-400 hover:text-white transition-colors">Order Now</a></li>
+          <li><a href="/manage-operational-plan-assignment-help/" class="text-sm text-gray-400 hover:text-white transition-colors">Manage Operational Plan</a></li>
+          <li><a href="/how-to-write-an-economics-research-paper/" class="text-sm text-gray-400 hover:text-white transition-colors">Economics Research Paper Guide</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+      <p>&copy; {new Date().getFullYear()} AssignmentHelpTalk.com — All rights reserved.</p>
+    </div>
+  </div>
+</footer>

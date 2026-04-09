@@ -1,0 +1,25 @@
+---
+interface Props {
+  href?: string;
+  text?: string;
+  variant?: 'primary' | 'secondary';
+  class?: string;
+}
+const {
+  href = '/order-now/',
+  text = 'Place Your Order Now',
+  variant = 'primary',
+  class: className = '',
+} = Astro.props;
+
+const styles = {
+  primary: 'bg-secondary hover:bg-orange-600 text-white',
+  secondary: 'bg-primary hover:bg-blue-700 text-white',
+};
+---
+<a
+  href={href}
+  class={`inline-block font-bold px-8 py-3 rounded-lg transition-colors text-center ${styles[variant]} ${className}`}
+>
+  {text}
+</a>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /order/user/login
+Disallow: /order/
+
+Sitemap: https://assignmenthelptalk.com/sitemap.xml

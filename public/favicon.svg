@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="#0f1b3d"/>
+  <!-- Orange accent bar at top -->
+  <rect x="12" y="10" width="40" height="5" rx="2.5" fill="#ff6b35"/>
+  <!-- Letter A -->
+  <text
+    x="32"
+    y="48"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="32"
+    font-weight="900"
+    fill="#ffffff"
+    text-anchor="middle"
+    letter-spacing="-1"
+  >A</text>
+  <!-- Small orange dot under A -->
+  <circle cx="32" cy="56" r="3" fill="#ff6b35"/>
+</svg>

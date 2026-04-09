@@ -2,7 +2,7 @@
 interface Props {
   href?: string;
   text?: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'outline';
   class?: string;
 }
 const {
@@ -13,13 +13,14 @@ const {
 } = Astro.props;
 
 const styles = {
-  primary: 'bg-secondary hover:bg-orange-600 text-white',
-  secondary: 'bg-primary hover:bg-blue-700 text-white',
+  primary: 'bg-accent hover:bg-accent-hover text-white shadow-md hover:shadow-lg',
+  secondary: 'bg-primary hover:bg-primary/90 text-white shadow-md hover:shadow-lg',
+  outline: 'bg-transparent border-2 border-white text-white hover:bg-white hover:text-dark',
 };
 ---
 <a
   href={href}
-  class={`inline-block font-bold px-8 py-3 rounded-lg transition-colors text-center ${styles[variant]} ${className}`}
+  class={`inline-block font-bold px-8 py-3.5 rounded-full transition-all duration-200 text-center ${styles[variant]} ${className}`}
 >
   {text}
 </a>

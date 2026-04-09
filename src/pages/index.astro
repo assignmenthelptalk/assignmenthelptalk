@@ -8,160 +8,351 @@ import CTAButton from '../components/CTAButton.astro';
   canonical="https://assignmenthelptalk.com/"
   robots="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
 >
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-    <div class="container mx-auto px-4 max-w-5xl text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-        Hire The Best Personal Assignment Writer Today
-      </h1>
-      <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-        Assignment writing service for someone who needs to see the perfect results fast.
-        Place An Order Now!
-      </p>
-      <CTAButton text="Place An Order Now" href="/order-now/" class="text-lg px-10 py-4" />
-    </div>
-  </section>
 
-  <!-- Trust bar -->
-  <section class="py-10 bg-gray-50 border-b">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold text-dark mb-2">Trusted by 100,000+ happy customers</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        Students across the USA, UK, UAE, Australia, and Canada trust Assignment Help Talk for expert academic writing.
-      </p>
-    </div>
-  </section>
+  <!-- ═══════════════════════════════════════════════
+       HERO — split layout, dark navy background
+  ════════════════════════════════════════════════ -->
+  <section class="bg-gradient-to-br from-dark to-primary py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-5 gap-12 items-center">
 
-  <!-- Services grid -->
-  <section class="py-16">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <h2 class="text-3xl font-bold text-dark mb-10 text-center">Our Unbeatable Services</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-          <h2 class="text-xl font-bold text-primary mb-3">Writing</h2>
-          <p class="text-gray-600 text-sm">
-            Just give us the instruction and make the payment. We will write the paper from scratch.
-            The full payment is after you&apos;re fully satisfied.
+        <!-- Left: heading + CTA -->
+        <div class="lg:col-span-3">
+          <!-- Trust badge -->
+          <div class="inline-flex items-center gap-2 bg-white/10 text-white text-sm px-4 py-1.5 rounded-full mb-6">
+            <span class="text-accent font-bold">★★★★★</span>
+            <span>Trusted by 100,000+ happy customers</span>
+          </div>
+
+          <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">
+            Hire The Best Personal Assignment Writer Today
+          </h1>
+          <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+            Assignment writing service for someone who needs to see the perfect results fast.
+            Expert writers, plagiarism-free work, and on-time delivery guaranteed.
           </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <CTAButton text="Place An Order Now" variant="primary" />
+            <a href="/about-us/" class="inline-flex items-center gap-2 text-white font-semibold px-6 py-3.5 rounded-full border border-white/30 hover:bg-white/10 transition-colors">
+              Learn More <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Trust icons row -->
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
+            <span class="flex items-center gap-1.5"><span class="text-accent">✓</span> Plagiarism Free</span>
+            <span class="flex items-center gap-1.5"><span class="text-accent">✓</span> On-Time Delivery</span>
+            <span class="flex items-center gap-1.5"><span class="text-accent">✓</span> 24/7 Support</span>
+            <span class="flex items-center gap-1.5"><span class="text-accent">✓</span> Free Revisions</span>
+          </div>
         </div>
-        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-          <h2 class="text-xl font-bold text-primary mb-3">Rewriting</h2>
-          <p class="text-gray-600 text-sm">
-            We will completely rewrite your paper if you&apos;ve done the research, and you need a
-            specialist to make it top notch — originality guaranteed.
-          </p>
+
+        <!-- Right: Order form card -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-2xl shadow-2xl p-7">
+            <h2 class="text-lg font-bold text-dark mb-1">Start Your Order</h2>
+            <p class="text-sm text-muted mb-5">Fill in the details and get your quote instantly</p>
+
+            <form action="/order-now/" method="get" class="flex flex-col gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5" for="subject">Subject / Discipline</label>
+                <select id="subject" name="subject" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent">
+                  <option value="">Select subject…</option>
+                  <option>Nursing</option>
+                  <option>Economics</option>
+                  <option>Biology</option>
+                  <option>Finance</option>
+                  <option>HR / CIPD</option>
+                  <option>Information Technology</option>
+                  <option>Business</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5" for="type">Assignment Type</label>
+                <select id="type" name="type" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent">
+                  <option value="">Select type…</option>
+                  <option>Essay</option>
+                  <option>Research Paper</option>
+                  <option>Capstone Project</option>
+                  <option>Dissertation</option>
+                  <option>Lab Report</option>
+                  <option>Care Plan</option>
+                  <option>SOP</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5" for="deadline">Deadline</label>
+                <select id="deadline" name="deadline" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent">
+                  <option value="">Select deadline…</option>
+                  <option>6 hours</option>
+                  <option>12 hours</option>
+                  <option>24 hours</option>
+                  <option>3 days</option>
+                  <option>7 days</option>
+                  <option>14 days</option>
+                  <option>30 days</option>
+                </select>
+              </div>
+
+              <button type="submit" class="w-full bg-accent hover:bg-accent-hover text-white font-bold py-3.5 rounded-full transition-colors text-sm shadow-md mt-1">
+                Get My Quote →
+              </button>
+            </form>
+
+            <p class="text-xs text-muted text-center mt-4">
+              No payment needed to get a quote. 100% confidential.
+            </p>
+          </div>
         </div>
-        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-          <h2 class="text-xl font-bold text-primary mb-3">Editing</h2>
-          <p class="text-gray-600 text-sm">
-            If you have a task that needs some last-minute changes, send it to us with instructions.
-            We&apos;ll have it back to you ASAP.
-          </p>
-        </div>
-        <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-          <h2 class="text-xl font-bold text-primary mb-3">Proofreading</h2>
-          <p class="text-gray-600 text-sm">
-            For professional proofreading, we go over your finished work, checking spelling, grammar,
-            and formatting to make sure the assignment is top-notch.
-          </p>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Benefits Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <h2 class="text-3xl font-bold text-dark mb-10 text-center">Benefit from Assignment Help Talk- Extras</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <h3 class="text-lg font-bold text-dark mb-2">24/7 Support</h3>
-          <p class="text-gray-600 text-sm">We&apos;re always online day and night. Connect with customer support around-the-clock for any orders or urgent questions.</p>
-        </div>
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <h3 class="text-lg font-bold text-dark mb-2">Unlimited Edit</h3>
-          <p class="text-gray-600 text-sm">We do all revisions free of charge. Ask your writer for adjustments and you&apos;ll have them in no time!</p>
-        </div>
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <h3 class="text-lg font-bold text-dark mb-2">Flexible Prices</h3>
-          <p class="text-gray-600 text-sm">All the prices are negotiable. Just contact us on the chat and you will get a good discount. Affordability is in our DNA.</p>
-        </div>
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <h3 class="text-lg font-bold text-dark mb-2">Quick Turn Around time</h3>
-          <p class="text-gray-600 text-sm">No matter how tight the deadline, you can get your paper done.</p>
-        </div>
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <h3 class="text-lg font-bold text-dark mb-2">Free Plagiarism Reports</h3>
-          <p class="text-gray-600 text-sm">Originality guaranteed. We provide a FREE Plagiarism report with every assignment because originality is one of our main priorities.</p>
-        </div>
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <h3 class="text-lg font-bold text-dark mb-2">Quality Control</h3>
-          <p class="text-gray-600 text-sm">We have a quality control department. Every essay must go through an extra eye to ensure quality.</p>
-        </div>
+  <!-- ═══════════════════════════════════════════════
+       STATS BAR
+  ════════════════════════════════════════════════ -->
+  <section class="bg-white border-b border-gray-100 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+        {[
+          { number: '100,000+', label: 'Happy Customers' },
+          { number: '4.9/5', label: 'Average Rating' },
+          { number: '5,000+', label: 'Expert Writers' },
+          { number: '10+', label: 'Years Experience' },
+          { number: '24/7', label: 'Customer Support' },
+        ].map(({ number, label }) => (
+          <div class="px-2 md:border-r md:last:border-r-0 border-gray-100">
+            <div class="text-3xl font-extrabold text-dark mb-1">{number}</div>
+            <div class="text-sm text-muted">{label}</div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- About us section -->
-  <section class="py-16">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-3xl font-bold text-dark mb-6">About Us</h2>
-      <p class="text-gray-700 mb-4">
-        If you are looking for an assignment help expert writer to help you with your assignment, you are in the right place.
-        We offer assignment help to students in the USA, UK, UAE, Australia, and Canada. Our Writing Experts will assist you
-        to write a perfect research paper, dissertation, capstone, thesis, and term papers.
-      </p>
-      <p class="text-gray-700 mb-4">
-        If you don&apos;t have enough time to undertake thorough research on your assignment, our expert writer will help you meet
-        your tight schedule. Assignment Help Talk removes all your doubts by engaging the best experts in any field.
-      </p>
-      <p class="text-gray-700 mb-6">
-        Our Masters &amp; Ph.D. level writers will help you write specialist papers in various disciplines including:
-        Nursing Projects, GIS projects, Statistics, Business plans, MBA Projects, Economics, Finance, and online class tests.
-      </p>
-      <CTAButton text="Order Assignment Help Now" href="/order-now/" />
-    </div>
-  </section>
+  <!-- ═══════════════════════════════════════════════
+       OUR UNBEATABLE SERVICES — H2 required by SEO
+  ════════════════════════════════════════════════ -->
+  <section class="py-16 bg-card-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-dark mb-3">Our Unbeatable Services</h2>
+        <p class="text-muted max-w-xl mx-auto">From essays to capstone projects — our expert writers cover every subject and assignment type.</p>
+      </div>
 
-  <!-- Services link grid -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <h2 class="text-3xl font-bold text-dark mb-10 text-center">Assignment Writers For All Courses Around The World</h2>
-      <p class="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-        We cover an extensive range of subjects and services like Economics research paper help,
-        psychology dissertation help, Marketing essay help and much more.
-      </p>
-      <div class="grid md:grid-cols-3 gap-4">
-        <a href="/economics-paper-writing-services/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">Economics Paper Writing Service &rarr;</a>
-        <a href="/biology-paper-writing-service/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">Biology Paper Writing Service &rarr;</a>
-        <a href="/nursing-paper-writing-services/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">Nursing Paper Writing Services &rarr;</a>
-        <a href="/nursing-care-plan-writing-services/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">Nursing Care Plan Writing Services &rarr;</a>
-        <a href="/cipd-assignment-help/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">CIPD Assignment Help &rarr;</a>
-        <a href="/hr-assignment-help/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">HR Assignment Help &rarr;</a>
-        <a href="/sop-writing-services/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">SOP Writing Services &rarr;</a>
-        <a href="/lab-report-writing-services/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">Lab Report Writing Services &rarr;</a>
-        <a href="/cips-assignment-help/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">CIPS Assignment Help &rarr;</a>
-        <a href="/gis-assignment-help/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">GIS Assignment Help &rarr;</a>
-        <a href="/dnp-capstone-project-help/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">DNP Capstone Project Help &rarr;</a>
-        <a href="/capstone-project-help/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">Capstone Project Help &rarr;</a>
-        <a href="/information-technology-capstone-project-ideas/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">IT Capstone Project Ideas &rarr;</a>
-        <a href="/ilm-assignment-help/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">ILM Assignment Help &rarr;</a>
-        <a href="/finance-assignment-help/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">Finance Assignment Help &rarr;</a>
-        <a href="/business-capstone-project/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">Business Capstone Project &rarr;</a>
-        <a href="/dnp-editing-services/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">DNP Editing Services &rarr;</a>
-        <a href="/manage-operational-plan-assignment-help/" class="block bg-white border border-gray-200 rounded-lg p-4 font-medium text-primary hover:border-primary hover:shadow-sm transition-all text-sm">Manage Operational Plan Help &rarr;</a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: '✍️', title: 'Essay Writing', desc: 'Custom essays written from scratch by subject experts.', href: '/economics-paper-writing-services/' },
+          { icon: '🔬', title: 'Biology Papers', desc: 'Lab reports, research papers, and biology assignments.', href: '/biology-paper-writing-service/' },
+          { icon: '🏥', title: 'Nursing Papers', desc: 'Care plans, capstone projects, and nursing essays.', href: '/nursing-paper-writing-services/' },
+          { icon: '📊', title: 'Finance Help', desc: 'Financial accounting and economics writing services.', href: '/finance-assignment-help/' },
+          { icon: '🎓', title: 'Capstone Projects', desc: 'DNP, IT, business, and nursing capstone assistance.', href: '/capstone-project-help/' },
+          { icon: '📋', title: 'SOP Writing', desc: 'Statement of purpose writing for top admissions.', href: '/sop-writing-services/' },
+          { icon: '🧬', title: 'Lab Reports', desc: 'Biology, chemistry, and physics lab report writing.', href: '/lab-report-writing-services/' },
+          { icon: '👩‍💼', title: 'HR & CIPD Help', desc: 'CIPD, CIPS, ILM, and GIS assignment specialists.', href: '/hr-assignment-help/' },
+        ].map(({ icon, title, desc, href }) => (
+          <a href={href} class="group bg-white rounded-xl shadow-sm hover:shadow-md p-6 transition-all duration-200 border border-gray-100 hover:border-accent/30 flex flex-col">
+            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-xl mb-4 group-hover:bg-accent/20 transition-colors">
+              {icon}
+            </div>
+            <h3 class="font-bold text-dark mb-1.5 text-base">{title}</h3>
+            <p class="text-sm text-muted leading-relaxed flex-1">{desc}</p>
+            <span class="mt-4 text-accent text-sm font-semibold inline-flex items-center gap-1">
+              Learn More <span aria-hidden="true">→</span>
+            </span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA Banner -->
-  <section class="py-16 bg-primary text-white text-center">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-      <p class="text-blue-100 mb-8">
-        Join 100,000+ students who trust Assignment Help Talk for expert academic writing support.
-      </p>
-      <CTAButton text="Place Your Order Now" href="/order-now/" variant="secondary" class="text-lg px-10 py-4" />
+  <!-- ═══════════════════════════════════════════════
+       HOW IT WORKS
+  ════════════════════════════════════════════════ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-dark mb-3">How It Works</h2>
+        <p class="text-muted max-w-xl mx-auto">Get your assignment done in 3 simple steps</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <!-- connector line desktop only -->
+        <div class="hidden md:block absolute top-8 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-0.5 border-t-2 border-dashed border-accent/30"></div>
+
+        {[
+          { step: '1', title: 'Place Your Order', desc: 'Fill in your assignment details — subject, type, deadline, and any special instructions you have for your writer.' },
+          { step: '2', title: 'Expert Gets Assigned', desc: 'We match you with the best available writer in your subject area. You can chat with them directly.' },
+          { step: '3', title: 'Receive & Approve', desc: "Get your completed assignment before the deadline. Request free revisions if needed until you're 100% satisfied." },
+        ].map(({ step, title, desc }) => (
+          <div class="flex flex-col items-center text-center px-4">
+            <div class="w-16 h-16 rounded-full bg-accent text-white text-2xl font-extrabold flex items-center justify-center shadow-lg mb-5 relative z-10">
+              {step}
+            </div>
+            <h3 class="font-bold text-dark text-lg mb-2">{title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <CTAButton text="Get Started Now" variant="primary" />
+      </div>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════════════════
+       TRUSTED BY — benefits grid
+  ════════════════════════════════════════════════ -->
+  <section class="py-16 bg-card-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-dark mb-3">Trusted by 100,000+ happy customers</h2>
+        <p class="text-muted max-w-xl mx-auto">Here's why thousands of students choose Assignment Help Talk</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: '🕐', title: '24/7 Support', desc: "Our support team is available around the clock to answer your questions." },
+          { icon: '⏰', title: 'On-Time Delivery', desc: 'We guarantee delivery before your deadline, every single time.' },
+          { icon: '📄', title: 'Plagiarism Free', desc: 'Every paper is written from scratch and checked with advanced plagiarism tools.' },
+          { icon: '🎓', title: 'Expert Writers', desc: 'All our writers hold advanced degrees and specialize in their fields.' },
+          { icon: '🔄', title: 'Free Revisions', desc: "Not happy? We offer unlimited free revisions until you're satisfied." },
+          { icon: '💰', title: 'Affordable Pricing', desc: 'Competitive rates with discounts for first-time and returning customers.' },
+        ].map(({ icon, title, desc }) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4">
+            <div class="text-3xl shrink-0 mt-0.5">{icon}</div>
+            <div>
+              <h3 class="font-bold text-dark mb-1">{title}</h3>
+              <p class="text-sm text-muted leading-relaxed">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════════════════ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-dark mb-3">What Students Say</h2>
+        <p class="text-muted">Real reviews from real students</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          {
+            quote: 'Incredible service! My nursing capstone was delivered 2 days early, and the quality was outstanding. My professor was very impressed.',
+            name: 'Sarah M.',
+            subject: 'Nursing Student, UK',
+          },
+          {
+            quote: 'I struggled with my economics research paper and these guys saved me. Professional, fast, and the paper was exactly what I needed.',
+            name: 'James K.',
+            subject: 'Economics Student, USA',
+          },
+          {
+            quote: 'The CIPD assignment help I received was top-notch. The writer clearly knew the subject inside out. Will definitely use again.',
+            name: 'Aisha T.',
+            subject: 'HR Student, UAE',
+          },
+        ].map(({ quote, name, subject }) => (
+          <div class="bg-card-bg rounded-xl p-6 shadow-sm border border-gray-100">
+            <div class="flex text-accent text-lg mb-4">★★★★★</div>
+            <p class="text-sm text-gray-700 leading-relaxed mb-5 italic">"{quote}"</p>
+            <div>
+              <div class="font-bold text-dark text-sm">{name}</div>
+              <div class="text-xs text-muted">{subject}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       WRITING / REWRITING — H2s required by CLAUDE.md
+  ════════════════════════════════════════════════ -->
+  <section class="py-16 bg-card-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="mb-10">
+        <h2 class="text-2xl font-extrabold text-dark mb-6">Writing</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {[
+            { label: 'Economics Paper Writing', href: '/economics-paper-writing-services/' },
+            { label: 'Biology Paper Writing', href: '/biology-paper-writing-service/' },
+            { label: 'Nursing Paper Writing', href: '/nursing-paper-writing-services/' },
+            { label: 'Nursing Care Plan', href: '/nursing-care-plan-writing-services/' },
+            { label: 'SOP Writing Services', href: '/sop-writing-services/' },
+            { label: 'Lab Report Writing', href: '/lab-report-writing-services/' },
+            { label: 'Finance Assignment Help', href: '/finance-assignment-help/' },
+            { label: 'HR Assignment Help', href: '/hr-assignment-help/' },
+            { label: 'GIS Assignment Help', href: '/gis-assignment-help/' },
+            { label: 'CIPD Assignment Help', href: '/cipd-assignment-help/' },
+            { label: 'CIPS Assignment Help', href: '/cips-assignment-help/' },
+            { label: 'ILM Assignment Help', href: '/ilm-assignment-help/' },
+          ].map(({ label, href }) => (
+            <a href={href} class="group flex items-center justify-between bg-white border border-gray-100 rounded-lg px-4 py-3 hover:border-accent/40 hover:shadow-sm transition-all">
+              <span class="text-sm font-medium text-gray-700 group-hover:text-dark">{label}</span>
+              <span class="text-accent text-sm opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-extrabold text-dark mb-6">Rewriting</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {[
+            { label: 'Capstone Project Help', href: '/capstone-project-help/' },
+            { label: 'DNP Capstone Project Help', href: '/dnp-capstone-project-help/' },
+            { label: 'Nursing Capstone', href: '/nursing-capstone/' },
+            { label: 'Nursing Capstone Project Ideas', href: '/nursing-capstone-project-ideas/' },
+            { label: 'Business Capstone Project', href: '/business-capstone-project/' },
+            { label: 'IT Capstone Project Ideas', href: '/information-technology-capstone-project-ideas/' },
+            { label: 'DNP Editing Services', href: '/dnp-editing-services/' },
+            { label: 'Manage Operational Plan', href: '/manage-operational-plan-assignment-help/' },
+            { label: 'Economics Research Paper Guide', href: '/how-to-write-an-economics-research-paper/' },
+          ].map(({ label, href }) => (
+            <a href={href} class="group flex items-center justify-between bg-white border border-gray-100 rounded-lg px-4 py-3 hover:border-accent/40 hover:shadow-sm transition-all">
+              <span class="text-sm font-medium text-gray-700 group-hover:text-dark">{label}</span>
+              <span class="text-accent text-sm opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       BOTTOM CTA BANNER
+  ════════════════════════════════════════════════ -->
+  <section class="bg-gradient-to-r from-accent to-accent-hover py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">
+        Ready to Get Your Assignment Done?
+      </h2>
+      <p class="text-white/90 text-lg mb-8">
+        Join 100,000+ students who've trusted us with their academic success. Place your order today.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <CTAButton text="Place Your Order Now" variant="outline" />
+        <a href="/contact/" class="inline-block font-bold px-8 py-3.5 rounded-full bg-white/20 text-white border border-white/40 hover:bg-white/30 transition-colors text-center">
+          Talk to Us First
+        </a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>

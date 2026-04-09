@@ -24,30 +24,48 @@ const capstones = [
   { label: 'DNP Editing Services', href: '/dnp-editing-services/' },
 ];
 ---
-<footer class="bg-dark text-gray-300 mt-16">
-  <div class="container mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <!-- Brand -->
+<footer class="bg-dark text-gray-400 mt-16">
+  <!-- Main footer grid -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand column -->
       <div>
-        <h3 class="text-white font-bold text-lg mb-3">Assignment Help Talk</h3>
-        <p class="text-sm text-gray-400 mb-4">
+        <a href="/" class="flex items-center gap-1 mb-4">
+          <span class="text-lg font-extrabold text-white tracking-tight">Assignment Help</span>
+          <span class="text-lg font-extrabold text-accent">Talk</span>
+        </a>
+        <p class="text-sm leading-relaxed mb-5">
           Professional academic writing services trusted by 100,000+ students worldwide.
         </p>
-        <p class="text-sm text-gray-400">
+        <!-- Star rating block -->
+        <div class="flex items-center gap-2 mb-4">
+          <div class="flex text-accent text-base">★★★★★</div>
+          <span class="text-sm text-white font-semibold">4.9/5</span>
+          <span class="text-xs text-gray-500">Rating</span>
+        </div>
+        <p class="text-sm">
           <a href="mailto:support@assignmenthelptalk.com" class="hover:text-white transition-colors">
             support@assignmenthelptalk.com
           </a>
         </p>
-        <p class="text-sm text-gray-400">+(44) 731-183-9056</p>
+        <p class="text-sm mt-1">+(44) 731-183-9056</p>
+        <!-- Trust badges row -->
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="text-xs bg-white/10 text-gray-300 rounded-full px-3 py-1">✓ Plagiarism Free</span>
+          <span class="text-xs bg-white/10 text-gray-300 rounded-full px-3 py-1">✓ On-Time Delivery</span>
+          <span class="text-xs bg-white/10 text-gray-300 rounded-full px-3 py-1">✓ 24/7 Support</span>
+        </div>
       </div>
 
-      <!-- Services -->
+      <!-- Writing Services -->
       <div>
-        <h4 class="text-white font-semibold mb-3">Writing Services</h4>
-        <ul class="space-y-1">
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Writing Services</h4>
+        <ul class="space-y-2">
           {services.map(({ label, href }) => (
             <li>
-              <a href={href} class="text-sm text-gray-400 hover:text-white transition-colors">
+              <a href={href} class="text-sm hover:text-white hover:translate-x-0.5 transition-all inline-flex items-center gap-1.5 group">
+                <span class="w-1 h-1 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity shrink-0"></span>
                 {label}
               </a>
             </li>
@@ -55,13 +73,14 @@ const capstones = [
         </ul>
       </div>
 
-      <!-- Capstone -->
+      <!-- Capstone Services -->
       <div>
-        <h4 class="text-white font-semibold mb-3">Capstone Services</h4>
-        <ul class="space-y-1">
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Capstone Services</h4>
+        <ul class="space-y-2">
           {capstones.map(({ label, href }) => (
             <li>
-              <a href={href} class="text-sm text-gray-400 hover:text-white transition-colors">
+              <a href={href} class="text-sm hover:text-white hover:translate-x-0.5 transition-all inline-flex items-center gap-1.5 group">
+                <span class="w-1 h-1 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity shrink-0"></span>
                 {label}
               </a>
             </li>
@@ -71,20 +90,45 @@ const capstones = [
 
       <!-- Quick Links -->
       <div>
-        <h4 class="text-white font-semibold mb-3">Quick Links</h4>
-        <ul class="space-y-1">
-          <li><a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a></li>
-          <li><a href="/about-us/" class="text-sm text-gray-400 hover:text-white transition-colors">About Us</a></li>
-          <li><a href="/contact/" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li>
-          <li><a href="/order-now/" class="text-sm text-gray-400 hover:text-white transition-colors">Order Now</a></li>
-          <li><a href="/manage-operational-plan-assignment-help/" class="text-sm text-gray-400 hover:text-white transition-colors">Manage Operational Plan</a></li>
-          <li><a href="/how-to-write-an-economics-research-paper/" class="text-sm text-gray-400 hover:text-white transition-colors">Economics Research Paper Guide</a></li>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          {[
+            { label: 'Home', href: '/' },
+            { label: 'About Us', href: '/about-us/' },
+            { label: 'Contact Us', href: '/contact/' },
+            { label: 'Order Now', href: '/order-now/' },
+            { label: 'Manage Operational Plan', href: '/manage-operational-plan-assignment-help/' },
+            { label: 'Economics Research Paper Guide', href: '/how-to-write-an-economics-research-paper/' },
+          ].map(({ label, href }) => (
+            <li>
+              <a href={href} class="text-sm hover:text-white transition-colors inline-flex items-center gap-1.5 group">
+                <span class="w-1 h-1 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity shrink-0"></span>
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
+        <div class="mt-6">
+          <a
+            href="/order-now/"
+            class="inline-block bg-accent text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-accent-hover transition-colors"
+          >
+            Place Order Now
+          </a>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+  <!-- Bottom bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
       <p>&copy; {new Date().getFullYear()} AssignmentHelpTalk.com — All rights reserved.</p>
+      <div class="flex gap-5">
+        <a href="/about-us/" class="hover:text-gray-300 transition-colors">About</a>
+        <a href="/contact/" class="hover:text-gray-300 transition-colors">Contact</a>
+        <a href="/order-now/" class="hover:text-gray-300 transition-colors">Order</a>
+      </div>
     </div>
   </div>
 </footer>

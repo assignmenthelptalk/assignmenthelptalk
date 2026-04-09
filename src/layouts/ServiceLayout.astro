@@ -1,0 +1,182 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  h1: string;
+  ogTitle?: string;
+  ogImage?: string;
+  robots?: string;
+}
+const { h1, ...layoutProps } = Astro.props;
+---
+<BaseLayout {...layoutProps}>
+
+  <!-- Navy Hero -->
+  <section class="bg-gradient-to-br from-dark to-primary py-14 lg:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Breadcrumb -->
+      <nav class="mb-4 text-sm text-gray-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2">›</span>
+        <span class="text-gray-300">{h1}</span>
+      </nav>
+      <h1 class="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-6">
+        {h1}
+      </h1>
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <CTAButton text="Place Your Order Now" variant="primary" />
+        <a href="/contact/" class="inline-flex items-center gap-2 text-white font-semibold px-6 py-3.5 rounded-full border border-white/30 hover:bg-white/10 transition-colors text-sm">
+          Talk to Us First
+        </a>
+      </div>
+      <!-- Trust row -->
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-400">
+        <span class="flex items-center gap-1.5"><span class="text-accent">✓</span> Plagiarism Free</span>
+        <span class="flex items-center gap-1.5"><span class="text-accent">✓</span> On-Time Delivery</span>
+        <span class="flex items-center gap-1.5"><span class="text-accent">✓</span> Expert Writers</span>
+        <span class="flex items-center gap-1.5"><span class="text-accent">✓</span> Free Revisions</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid lg:grid-cols-3 gap-10">
+
+      <!-- Main content -->
+      <article class="lg:col-span-2 service-content">
+        <slot />
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-1">
+        <div class="sticky top-24 flex flex-col gap-5">
+          <!-- CTA card -->
+          <div class="bg-accent rounded-2xl p-6 text-white shadow-lg">
+            <h3 class="text-lg font-bold mb-2">Need Help Now?</h3>
+            <p class="text-sm text-white/90 mb-5 leading-relaxed">
+              Get your assignment done by an expert writer. Fast, confidential, and plagiarism-free.
+            </p>
+            <a href="/order-now/" class="block w-full bg-white text-accent font-bold text-sm py-3 rounded-full text-center hover:bg-gray-50 transition-colors">
+              Place Order →
+            </a>
+          </div>
+
+          <!-- Features list -->
+          <div class="bg-card-bg rounded-2xl p-6 border border-gray-100">
+            <h4 class="font-bold text-dark mb-4 text-sm uppercase tracking-wider">Why Choose Us</h4>
+            <ul class="space-y-3 text-sm text-muted">
+              {[
+                '100% Original Work',
+                'PhD & Masters Writers',
+                'Free Plagiarism Report',
+                'On-Time Delivery',
+                'Unlimited Free Revisions',
+                '24/7 Customer Support',
+                'Secure Payments',
+              ].map((item) => (
+                <li class="flex items-center gap-2">
+                  <span class="w-4 h-4 rounded-full bg-accent/15 text-accent text-xs flex items-center justify-center font-bold shrink-0">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Related services -->
+          <div class="bg-white rounded-2xl p-6 border border-gray-100">
+            <h4 class="font-bold text-dark mb-4 text-sm uppercase tracking-wider">Related Services</h4>
+            <ul class="space-y-2 text-sm">
+              {[
+                { label: 'Nursing Paper Writing', href: '/nursing-paper-writing-services/' },
+                { label: 'Finance Assignment Help', href: '/finance-assignment-help/' },
+                { label: 'Capstone Project Help', href: '/capstone-project-help/' },
+                { label: 'SOP Writing Services', href: '/sop-writing-services/' },
+                { label: 'Lab Report Writing', href: '/lab-report-writing-services/' },
+              ].map(({ label, href }) => (
+                <li>
+                  <a href={href} class="flex items-center gap-2 text-primary hover:text-accent transition-colors group">
+                    <span class="text-accent text-xs">→</span>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Bottom CTA Banner -->
+  <section class="bg-gradient-to-r from-dark to-primary py-14">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-white mb-3">
+        Ready to Get Expert Help?
+      </h2>
+      <p class="text-gray-300 mb-7">
+        Join 100,000+ students who've trusted us with their academic success.
+      </p>
+      <CTAButton text="Place Your Order Now" variant="primary" />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style is:global>
+  /* Service page article typography */
+  .service-content h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #0f1b3d;
+    margin-top: 2rem;
+    margin-bottom: 0.875rem;
+    padding-left: 0.875rem;
+    border-left: 3px solid #ff6b35;
+  }
+  .service-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a3a6b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.625rem;
+  }
+  .service-content p {
+    color: #374151;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .service-content ul, .service-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #374151;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
+  .service-content li {
+    margin-bottom: 0.375rem;
+  }
+  .service-content section {
+    margin-bottom: 2rem;
+    padding: 1.75rem;
+    background: #fff;
+    border-radius: 0.875rem;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .service-content section:first-child {
+    margin-top: 0;
+  }
+  /* Hide inline CTAButton that pages put inside article body
+     (layout already has CTAs) */
+  .service-content > a[href="/order-now/"],
+  .service-content > div > a[href="/order-now/"] {
+    display: none;
+  }
+</style>

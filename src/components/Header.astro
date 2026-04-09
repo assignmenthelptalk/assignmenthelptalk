@@ -9,73 +9,108 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 <header class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
+
       <!-- Logo -->
-      <a href="/" class="flex items-center" aria-label="Assignment Help Talk - Home">
-        <span class="text-xl font-bold text-primary">Assignment Help Talk</span>
+      <a href="/" class="flex items-center gap-1 shrink-0" aria-label="Assignment Help Talk - Home">
+        <span class="text-xl font-extrabold text-dark tracking-tight">Assignment Help</span>
+        <span class="text-xl font-extrabold text-accent">Talk</span>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-6" role="navigation" aria-label="Main navigation">
+      <!-- Desktop Nav (centered) -->
+      <nav class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2" role="navigation" aria-label="Main navigation">
         {navLinks.map(({ label, href }) => (
           <a
             href={href}
-            class={`text-sm font-medium transition-colors hover:text-primary ${
-              currentPath === href ? 'text-primary font-semibold' : 'text-gray-700'
+            class={`text-sm font-medium transition-all duration-150 pb-0.5 border-b-2 ${
+              currentPath === href
+                ? 'text-dark font-semibold border-accent'
+                : 'text-gray-600 border-transparent hover:text-dark hover:border-accent'
             }`}
           >
             {label}
           </a>
         ))}
+      </nav>
+
+      <!-- Right CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a
+          href="/order/user/login"
+          class="text-sm font-medium text-gray-600 hover:text-dark transition-colors"
+        >
+          Login
+        </a>
         <a
           href="/order-now/"
-          class="bg-secondary text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors"
+          class="bg-accent text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-accent-hover transition-colors shadow-sm"
         >
-          Place Order
+          Order Now
         </a>
-      </nav>
+      </div>
 
       <!-- Mobile menu button -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
+        class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
         aria-label="Toggle mobile menu"
         aria-expanded="false"
       >
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg id="icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
+  </div>
 
-    <!-- Mobile Nav -->
-    <nav id="mobile-menu" class="md:hidden hidden pb-4" role="navigation" aria-label="Mobile navigation">
+  <!-- Mobile Nav -->
+  <nav id="mobile-menu" class="md:hidden hidden border-t border-gray-100" role="navigation" aria-label="Mobile navigation">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1">
       {navLinks.map(({ label, href }) => (
         <a
           href={href}
-          class="block py-2 text-sm font-medium text-gray-700 hover:text-primary"
+          class={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+            currentPath === href
+              ? 'bg-dark/5 text-dark font-semibold'
+              : 'text-gray-600 hover:bg-gray-50 hover:text-dark'
+          }`}
         >
           {label}
         </a>
       ))}
-      <a
-        href="/order-now/"
-        class="block mt-2 bg-secondary text-white text-sm font-semibold px-4 py-2 rounded-lg text-center hover:bg-orange-600 transition-colors"
-      >
-        Place Order
-      </a>
-    </nav>
-  </div>
+      <div class="mt-2 pt-2 border-t border-gray-100 flex flex-col gap-2">
+        <a
+          href="/order/user/login"
+          class="block px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-dark"
+        >
+          Login
+        </a>
+        <a
+          href="/order-now/"
+          class="block bg-accent text-white text-sm font-semibold px-4 py-2.5 rounded-full text-center hover:bg-accent-hover transition-colors"
+        >
+          Order Now
+        </a>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <script>
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
   if (btn && menu) {
     btn.addEventListener('click', () => {
       const isOpen = !menu.classList.contains('hidden');
       menu.classList.toggle('hidden', isOpen);
+      iconOpen?.classList.toggle('hidden', !isOpen);
+      iconClose?.classList.toggle('hidden', isOpen);
       btn.setAttribute('aria-expanded', String(!isOpen));
     });
   }

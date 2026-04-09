@@ -4,9 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1a56db',
-        secondary: '#ff6b35',
-        dark: '#1e293b',
+        primary: '#1a3a6b',
+        accent: '#ff6b35',
+        'accent-hover': '#e85d27',
+        dark: '#0f1b3d',
+        'card-bg': '#f8fafc',
+        muted: '#6b7280',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],

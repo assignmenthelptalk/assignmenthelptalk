@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
 ---
 <BaseLayout
   title="Order Now - Assignment Help Talk"
@@ -8,17 +7,109 @@ import CTAButton from '../components/CTAButton.astro';
   canonical="https://assignmenthelptalk.com/order-now/"
   robots="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
 >
-  <article class="container mx-auto px-4 py-12 max-w-4xl">
-    <h1 class="text-4xl font-extrabold text-dark mb-6">Order Now</h1>
-
-    <div class="mb-8">
-      <CTAButton text="Place Your Order Now" href="/order-now/" />
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-dark to-primary py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-extrabold text-white mb-4">Order Now</h1>
+      <p class="text-gray-300 text-lg mb-8">Fill in your details below and one of our expert writers will get started on your assignment right away.</p>
     </div>
+  </section>
 
+  <!-- Order Form -->
+  <section class="py-16 bg-card-bg">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-dark mb-6">Place Your Order</h2>
 
+        <form action="/order/" method="get" class="flex flex-col gap-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1.5" for="subject">Subject / Discipline</label>
+              <select id="subject" name="subject" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent">
+                <option value="">Select subject…</option>
+                <option>Nursing</option>
+                <option>Economics</option>
+                <option>Biology</option>
+                <option>Finance</option>
+                <option>HR / CIPD</option>
+                <option>Information Technology</option>
+                <option>Business</option>
+                <option>GIS</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1.5" for="type">Assignment Type</label>
+              <select id="type" name="type" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent">
+                <option value="">Select type…</option>
+                <option>Essay</option>
+                <option>Research Paper</option>
+                <option>Capstone Project</option>
+                <option>Dissertation</option>
+                <option>Lab Report</option>
+                <option>Care Plan</option>
+                <option>SOP</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
 
-    <div class="mt-12 text-center">
-      <CTAButton text="Get Expert Help Now" href="/order-now/" />
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1.5" for="deadline">Deadline</label>
+              <select id="deadline" name="deadline" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent">
+                <option value="">Select deadline…</option>
+                <option>6 hours</option>
+                <option>12 hours</option>
+                <option>24 hours</option>
+                <option>3 days</option>
+                <option>7 days</option>
+                <option>14 days</option>
+                <option>30 days</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1.5" for="pages">Number of Pages</label>
+              <select id="pages" name="pages" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent">
+                <option value="">Select pages…</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3-5</option>
+                <option>6-10</option>
+                <option>11-20</option>
+                <option>20+</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 mb-1.5" for="instructions">Special Instructions</label>
+            <textarea id="instructions" name="instructions" rows="4" placeholder="Add any special instructions, formatting requirements, or notes for your writer…" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-accent hover:bg-accent-hover text-white font-bold py-4 rounded-full transition-colors text-base shadow-md">
+            Continue to Order →
+          </button>
+        </form>
+
+        <p class="text-xs text-muted text-center mt-4">
+          Secure checkout. No payment required until you approve your writer.
+        </p>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+        {[
+          { icon: '🔒', text: '100% Secure' },
+          { icon: '✅', text: 'Plagiarism Free' },
+          { icon: '⏱️', text: 'On-Time Delivery' },
+        ].map(({ icon, text }) => (
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <div class="text-2xl mb-1">{icon}</div>
+            <div class="text-xs font-semibold text-dark">{text}</div>
+          </div>
+        ))}
+      </div>
     </div>
-  </article>
+  </section>
 </BaseLayout>
